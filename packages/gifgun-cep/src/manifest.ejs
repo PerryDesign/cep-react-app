@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionManifest Version="5.0"
+                   ExtensionBundleId="com.aescripts.datamosh2" ExtensionBundleVersion="<%= CEP_VERSION %>"
+                   ExtensionBundleName="Datamosh 2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ExtensionList>
+        <Extension Id="com.aescripts.datamosh2.app" Version="2.0.0" />
+        <Extension Id="com.aescripts.datamosh2.settings" Version="2.0.0" />
+        <Extension Id="com.aescripts.datamosh2.about" Version="1.0" />
+    </ExtensionList>
+
+    <ExecutionEnvironment>
+        <HostList>
+            <Host Name="AEFT" Version="[13.0,99.9]" />
+        </HostList>
+        <LocaleList>
+            <Locale Code="All" />
+        </LocaleList>
+
+        <RequiredRuntimeList>
+            <RequiredRuntime Name="CSXS" Version="8.0" />
+        </RequiredRuntimeList>
+
+    </ExecutionEnvironment>
+
+    <DispatchInfoList>
+        <Extension Id="com.aescripts.datamosh2.app">
+            <DispatchInfo >
+                <Resources>
+                    <MainPath>./index.html</MainPath>
+                    <ScriptPath>./host/main.jsx</ScriptPath>
+                    <CEFCommandLine>
+                        <Parameter>--enable-nodejs</Parameter>
+                        <!-- This is a fix location.reload not working in CEP (require is not defined) -->
+                        <Parameter>--mixed-context</Parameter>
+                        <Parameter>--allow-file-access-from-files</Parameter>
+                        <Parameter>--allow-file-access</Parameter>
+                        <Parameter>--persist-session-cookies</Parameter>
+                    </CEFCommandLine>
+                </Resources>
+                <Lifecycle>
+                    <AutoVisible>true</AutoVisible>
+                </Lifecycle>
+                <UI>
+                    <Type>Panel</Type>
+                    <Menu>Datamosh 2</Menu>
+                    <Geometry>
+                        <Size>
+                            <Height>180</Height>
+                            <Width>230</Width>
+                        </Size>
+                    </Geometry>
+                </UI>
+            </DispatchInfo>
+        </Extension>
+        <Extension Id="com.aescripts.datamosh2.settings">
+            <DispatchInfo >
+                <Resources>
+                    <MainPath>./settings.html</MainPath>
+                    <CEFCommandLine>
+                        <Parameter>--enable-nodejs</Parameter>
+                        <!-- This is a fix location.reload not working in CEP (require is not defined) -->
+                        <Parameter>--mixed-context</Parameter>
+                        <Parameter>--allow-file-access-from-files</Parameter>
+                        <Parameter>--allow-file-access</Parameter>
+                        <Parameter>--persist-session-cookies</Parameter>
+                    </CEFCommandLine>
+                </Resources>
+                <Lifecycle>
+                    <AutoVisible>true</AutoVisible>
+                </Lifecycle>
+                <UI>
+                    <Type>Modeless</Type>
+                    <Geometry>
+                        <MinSize>
+                            <Height>450</Height>
+                            <Width>700</Width>
+                        </MinSize>
+                        <Size>
+                            <Height>450</Height>
+                            <Width>700</Width>
+                        </Size>
+                        <MaxSize>
+                            <Height>450</Height>
+                            <Width>700</Width>
+                        </MaxSize>
+                    </Geometry>
+                </UI>
+            </DispatchInfo>
+        </Extension>
+        <!-- DO NOT CHANGE BELOW THIS LINE -->
+        <Extension Id="com.aescripts.datamosh2.about">
+            <DispatchInfo >
+                <Resources>
+                    <MainPath>./dialog/dialog.html</MainPath>
+                    <CEFCommandLine>
+                        <Parameter>--enable-nodejs</Parameter>
+                        <Parameter>--allow-file-access-from-files</Parameter>
+                        <Parameter>--allow-file-access</Parameter>
+                    </CEFCommandLine>
+                </Resources>
+                <Lifecycle>
+                    <AutoVisible>true</AutoVisible>
+                </Lifecycle>
+                <UI>
+                    <Type>Modeless</Type>
+                    <Geometry>
+                        <Size>
+                            <Height>440</Height>
+                            <Width>350</Width>
+                        </Size>
+                        <MaxSize>
+                            <Height>500</Height>
+                            <Width>350</Width>
+                        </MaxSize>
+                        <MinSize>
+                            <Height>100</Height>
+                            <Width>350</Width>
+                        </MinSize>
+                    </Geometry>
+                </UI>
+            </DispatchInfo>
+        </Extension>
+    </DispatchInfoList>
+</ExtensionManifest>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionList>
+  <Extension Id="com.aescripts.datamosh2.app">
+  <HostList>
+    <Host Name="AEFT" Port="3013" />
+  </HostList>
+  </Extension>
+  <Extension Id="com.aescripts.datamosh2.settings">
+  <HostList>
+    <Host Name="AEFT" Port="3014" />
+  </HostList>
+  </Extension>
+  <Extension Id="com.aescripts.datamosh2.about">
+  <HostList>
+    <Host Name="AEFT" Port="3015" />
+  </HostList>
+  </Extension>
+</ExtensionList>

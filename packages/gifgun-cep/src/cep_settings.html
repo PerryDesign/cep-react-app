@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Datamosh 2 Settings</title>
+    <script>
+        window.appProductVersion = '<%= htmlWebpackPlugin.options.CEP_VERSION %>';
+        window.isRunningAsDevBuild = '<%= htmlWebpackPlugin.options.IS_DEV_BUILD %>';
+    </script>
+    <link rel="font" />
+    <script defer src="./scripts/ajv.min.js"></script>
+    <title>Datamosh 2 settings</title>
+</head>
+
+<body
+        style="overflow: hidden; background-color: #2a2a2a; height: 100vh;"
+        oncontextmenu="return false;"
+>
+<script type="text/javascript" src="libs/CSInterface.js"></script>
+<div id="root_gg"> Here is something?</div>
+<script
+        type="text/javascript"
+        src="<%= _.last(_.split(htmlWebpackPlugin.files.js[0], '/')) %>"
+        async
+></script>
+</body>
+</html>
